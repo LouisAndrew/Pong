@@ -61,7 +61,8 @@ const Item = styled.div`
   }
 
   h3 {
-      margin-left: 1rem;
+      margin: 0 1rem;
+      font-size: 1.5rem;
   }
 `
 
@@ -72,8 +73,8 @@ const Inner = styled.div`
   ${({ theme }) => theme.alignItems('center')};
   
   div h1 {
-    font-weight: 400;
-    font-size: 2.5rem;
+    font-weight: 700;
+    font-size: 3.2rem;
   }
 
   &.low {

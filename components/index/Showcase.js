@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Page from '../Page'
 import Wrap from '../Wrap'
+import ShowcaseCard from '../cards/ShowcaseCard'
 
 export default function Showcase() {
     return (
@@ -11,10 +12,18 @@ export default function Showcase() {
                 <Container>
                     <h1>Our Finest Masterpieces</h1>
                     <Case className='case'>
-                        <ItemBig className='big'></ItemBig>
-                        <Item className='small'></Item>
-                        <Item className='small'></Item>
-                        <ItemBig className='big'></ItemBig>
+                        <ItemBig className='big'>
+                            <ShowcaseCard big beerId='12' />
+                        </ItemBig>
+                        <Item className='small'>
+                            <ShowcaseCard beerId='49' />
+                        </Item>
+                        <Item className='small'>
+                            <ShowcaseCard beerId='31' />
+                        </Item>
+                        <ItemBig className='big'>
+                            <ShowcaseCard big beerId='52' />
+                        </ItemBig>
                     </Case>
                 </Container>
 
@@ -62,6 +71,19 @@ const Container = styled.div`
       .small {
           width: 49%;
           height: 32%;
+      }
+  }
+
+  @media only screen and (max-width: 850px) and (orientation: landscape) {
+
+      .big {
+        width: 60%;
+        height: 48%;
+      }
+
+      .small {
+        width: 38%;
+        height: 48%;
       }
   }
 `

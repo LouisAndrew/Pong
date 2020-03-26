@@ -5,7 +5,7 @@ import Wrap from '../Wrap'
 
 export default function Collection() {
     return (
-        <Page style={{ height: '50vh' }}>
+        <Page style={{ height: '50vh', marginTop: '2em' }}>
             <Wrap>
 
                 <Container>
@@ -31,4 +31,8 @@ const Container = styled.div`
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.flexFlow('column nowrap')};
   ${({ theme }) => theme.justifyContent('space-between')};
+
+  h1 {
+      margin-bottom: 1em;
+  }
 `
