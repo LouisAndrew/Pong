@@ -7,13 +7,6 @@ import BrowseItem from '../cards/BrowseItem'
 
 export default function Showcase() {
 
-    const itemDatas = [
-      {
-        imgUrl: 'https://live.staticflickr.com/3142/2729463236_1510ea4fff_b.jpg',
-        text: 'Search Beers made With Cascade'
-      }
-    ]
-
     return (
         <Page>
             <Wrap>

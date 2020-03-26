@@ -7,6 +7,7 @@ import Intro from '../components/index/Intro'
 import Showcase from '../components/index/Showcase'
 import Headline from '../components/index/Headline'
 import Collection from '../components/index/Collection'
+import Browse from '../components/index/Browse'
 
 export default function index() {
 
@@ -18,9 +19,9 @@ export default function index() {
 
       <Hero />
       <Intro />
+      <Browse />
       <Headline />
       <Showcase />
-      <Collection />
 
     </Layout>
   )

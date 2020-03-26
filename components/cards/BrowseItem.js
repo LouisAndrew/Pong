@@ -5,6 +5,7 @@ export default function BrowseItem(props) {
     console.log(props)
     return (
         <Container imgUrl={props.imgUrl}>
+
             <div>
                 <h2>{props.text}</h2>
             </div>
@@ -20,29 +21,39 @@ const Container = styled.div`
   position: relative;
 
   div h2 {
-      position: absolute;
-      right: 3rem;
-      bottom: 3rem;
+      width: 60%;
       color: #fff;
-      opacity: 0;
+      opacity: 0.7;
       transition: 0.5s;
+      text-align: center;
+      font-weight: 400;
   }
   
   &>div {
       ${({ theme }) => theme.fitContainer()};
-      background-color: rgba(21, 21, 21, 0.6);
+      ${({ theme }) => theme.flex()};
+      ${({ theme }) => theme.justifyContent('center')};
+      ${({ theme }) => theme.alignItems('center')};
+      background-color: rgba(21, 21, 21, 0);
       position: absolute;
       top: 0;
-      opacity: 0;
       transition: 0.5s;
   }
 
-  &>div:hover {
-      opacity: 1;
-      z-index: 2;
+  & > div:hover {
+      background-color: rgba(21, 21, 21, 0.6);
+      cursor: pointer;
   }
 
-  &>div:hover h2 {
-    opacity: 1;
+  & > div:hover h2 {
+      opacity: 1;
   }
+
+   @media only screen and ${({ theme }) => theme.sizes.tablet} {
+       
+       h2 {
+           font-size: 0.8rem;
+           bottom: 1rem;
+       }
+   }
 `
