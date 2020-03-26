@@ -47,6 +47,10 @@ const Container = styled.div`
   ${({ theme }) => theme.flexFlow('column nowrap')};
   ${({ theme }) => theme.justifyContent('space-between')};
 
+  h1 {
+    font-size: 2rem;
+  }
+
   @media only screen and ${({ theme }) => theme.sizes.tablet} {
       
 

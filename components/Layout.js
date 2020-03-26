@@ -10,7 +10,8 @@ export default function Layout(props) {
         sizes: {
             bigDesktop: '(min-width: 3000px)',
             mobile: '(max-width:464px)',
-            tablet: '(max-width: 1023px)'
+            tablet: '(max-width: 1023px)',
+            landscape: '(max-width: 850px) and (orientation: landscape)'
         },
         flex: () => (`
             display: -webkit-box;
