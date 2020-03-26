@@ -26,7 +26,7 @@ export default function Intro() {
     ]
 
     return (
-        <Page style={{ height: '50vh', marginTop: '2em' }}>
+        <Page style={{ height: '50vh', marginTop: '2vh' }}>
             <Wrap>
 
                 <Container>

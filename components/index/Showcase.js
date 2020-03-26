@@ -3,8 +3,17 @@ import styled from 'styled-components'
 import Page from '../Page'
 import Wrap from '../Wrap'
 import ShowcaseCard from '../cards/ShowcaseCard'
+import BrowseItem from '../cards/BrowseItem'
 
 export default function Showcase() {
+
+    const itemDatas = [
+      {
+        imgUrl: 'https://live.staticflickr.com/3142/2729463236_1510ea4fff_b.jpg',
+        text: 'Search Beers made With Cascade'
+      }
+    ]
+
     return (
         <Page>
             <Wrap>
@@ -14,6 +23,7 @@ export default function Showcase() {
                     <Case className='case'>
                         <ItemBig className='big'>
                             <ShowcaseCard big beerId='12' />
+                            {/* <BrowseItem big {...itemDatas[0]} /> */}
                         </ItemBig>
                         <Item className='small'>
                             <ShowcaseCard beerId='49' />
@@ -54,10 +64,11 @@ const Container = styled.div`
   ${({ theme }) => theme.fitContainer()}; 
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.flexFlow('column nowrap')};
-  ${({ theme }) => theme.justifyContent('space-between')};
+  ${({ theme }) => theme.justifyContent('center')};
 
   h1 {
     font-size: 2rem;
+    margin-bottom: 2vh;
   }
 
   @media only screen and ${({ theme }) => theme.sizes.tablet} {

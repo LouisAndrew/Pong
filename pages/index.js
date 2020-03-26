@@ -18,8 +18,8 @@ export default function index() {
 
       <Hero />
       <Intro />
-      <Showcase />
       <Headline />
+      <Showcase />
       <Collection />
 
     </Layout>

@@ -12,4 +12,6 @@ export default function Page(props) {
 const Container = styled.div`
   height: 100vh;
   width: 100%;
+
+  margin: ${props => props.margin && '0 2rem'};
 `

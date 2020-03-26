@@ -24,7 +24,7 @@ const Details = styled.div`
 
   h2 {
       font-weight: 400;
-      font-size: 2.4rem;
+      font-size: 3rem;
   }
 
   h3 {
@@ -40,6 +40,7 @@ const Container = styled.div`
   ${props => props.theme.flexFlow(props.big ? 'row nowrap' : 'row-reverse nowrap')};
   padding: 2rem;
   position: relative;
+  transition: 0.4s;
 
   /* img {
       height: ${props => props.big ? '110%' : '80%'};
@@ -49,8 +50,13 @@ const Container = styled.div`
   img {
       height: ${props => props.big ? '320px' : '240px'};
       width: ${props => props.big ? '80px' : '60px'};
+      transition: 0.4s;
       /* position: absolute;
       ${props => props.big ? "left: 2em;" : "right: 2em;"}; */
+  }
+
+  div h2, div h3, div h4 {
+      transition: 0.4s;
   }
 
 
@@ -149,5 +155,41 @@ const Container = styled.div`
       div {
           margin: 0 3rem;
       }
+  }
+
+  @media only screen and ( min-width: 1920px ) {
+      
+      img {
+        height: ${props => props.big ? '320px' : '280px'};
+        width: ${props => props.big ? '80px' : '70px'};
+      }
+
+      div h2 {
+          font-size: 3.2rem;
+      }
+
+      div h3 {
+          font-size: 2rem;
+      }
+
+      div h4 {
+          font-size: 1.8rem;
+      }
+
+      div {
+          margin: 0 8rem;
+      }
+  }
+
+  &:hover {
+      background-color: rgba(21, 21, 21, 0.6);
+  }
+
+  &:hover div h2, &:hover div h3, &:hover div h4 {
+      color: #fff;
+  }
+
+  &:hover img {
+      transform: scale(1.2);
   }
 `

@@ -19,4 +19,11 @@ const Container = styled.div`
           padding: ${({ theme }) => theme.padMobile};
       }
   }
+
+  @media only screen and ( min-width: 1920px ) {
+      
+      & {
+          padding: 2rem 2rem;
+      }
+  }
 `
