@@ -2,36 +2,32 @@ import React from 'react'
 import Page from '../Page'
 import Wrap from '../Wrap'
 import styled from 'styled-components'
-import Layout from '../Layout'
 
 export default function Prodie(props) {
 
-    console.log(props)
     return (
-        <Layout>
-            <Page>
-                <Wrap>
+        <Page>
+            <Wrap>
 
-                    <Container>
-                        <Inner>
-                            <img src={props.image_url} />
+                <Container>
+                    <Inner>
+                        <img src={props.image_url} />
+                        <div>
+                            <h1>{props.name}</h1>
+                            <h3>{props.tagline} </h3>
+                        </div>
+                        <CTA className='cta'>
+                            <h4>price: 1$</h4>
                             <div>
-                                <h1>{props.name}</h1>
-                                <h3>{props.tagline} </h3>
+                                <Buy>Buy Now</Buy>
+                                <Cart>Add To Cart</Cart>
                             </div>
-                            <CTA className='cta'>
-                                <h4>price: 1$</h4>
-                                <div>
-                                    <Buy>Buy Now</Buy>
-                                    <Cart>Add To Cart</Cart>
-                                </div>
-                            </CTA>
-                        </Inner>
-                    </Container>
+                        </CTA>
+                    </Inner>
+                </Container>
 
-                </Wrap>
-            </Page>
-        </Layout>
+            </Wrap>
+        </Page>
     )
 }
 

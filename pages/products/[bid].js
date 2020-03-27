@@ -1,10 +1,13 @@
 import Layout from "../../components/Layout"
 import fetch from 'node-fetch'
+import Prodie from "../../components/product/Prodie"
+import Details from "../../components/product/Details"
 
 const BeerProduct = ({ bid, rsp }) => {
     return (
         <Layout>
-
+            <Prodie {...rsp[0]} />
+            <Details {...rsp[0]} />
         </Layout>
     )
 }
@@ -33,13 +36,13 @@ export const getStaticPaths = async() => {
 export const getStaticProps = async({ params: { bid } }) => {
 
     const number = bid
-    // const rq = await fetch(`https://api.punkapi.com/v2/beers/${number}`)
-    // const rsp = await rq.json()
+    const rq = await fetch(`https://api.punkapi.com/v2/beers/${number}`)
+    const rsp = await rq.json()
 
     return {
         props: {
             bid,
-            // rsp
+            rsp
         }
     }
 }

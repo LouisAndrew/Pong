@@ -8,7 +8,6 @@ export default function ShowcaseCard(props) {
     const [ data, setData ] = useState()
 
     const doneLoading = () => {
-        console.log('im dunn')
         setLoaded(true)
     }
 
@@ -19,7 +18,6 @@ export default function ShowcaseCard(props) {
     }
     
     if (!name) {
-        console.log('no name here')
         getData()
         .then(dt => {
             setData(dt[0])

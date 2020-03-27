@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function DShowcaseCard(props) {
-    console.log(props)
     return (
         <Container big={props.big}>
             <img src={props.data.image_url} />

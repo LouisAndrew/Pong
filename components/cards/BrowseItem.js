@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function BrowseItem(props) {
-    console.log(props)
     return (
         <Container imgUrl={props.imgUrl}>
 
