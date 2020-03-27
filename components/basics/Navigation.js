@@ -22,7 +22,7 @@ export default function Navigation() {
                     </Link>
                 </li>
                 <li>
-                    <Link href='/products/1'>
+                    <Link href='/products/index-1'>
                         <a>Beers</a>
                     </Link>
                 </li>
@@ -56,13 +56,14 @@ const Container = styled.div`
       list-style: none;
       padding: 2rem;
       font-weight: 600;
+      transition: 0.5s;
   }
 
   #menu {
       height: 100%;
       width: 18%;
       position: absolute;
-      left: 5vw;
+      left: 4vw;
       display: none;
       transition: 0.5s;
   }
@@ -72,10 +73,14 @@ const Container = styled.div`
       width: 3vh;
       fill: #fff;
       position: absolute;
-      top: 5vh;
-      left: 5vh;
+      top: 4vw;
+      left: 4vw;
       display: none;
       transition: 1s;
+  }
+
+  li a:hover {
+      font-size: 1.5rem;
   }
 
   @media only screen and ${({ theme }) => theme.sizes.tablet} {
@@ -102,8 +107,8 @@ const Container = styled.div`
       }
 
       li {
-          padding: 5vh;
-          margin-left: 5vw;
+          padding: 4vw;
+          margin-left: 4vw;
       }
 
       li a {
@@ -117,6 +122,25 @@ const Container = styled.div`
       #menu.go {
           opacity: 0;
           transform: rotate(90deg);
+      }
+  }
+
+  @media only screen and ${({ theme }) => theme.sizes.mobile} {
+
+      #menu {
+          left: 2vh;
+      }
+
+      #exit {
+          left: 2vh;
+      }
+  } 
+
+  @media only screen and ( orientation: landscape ) and ( max-width: 850px ) {
+      
+      #menu {
+          width: 10%;
+          fill: #fff;
       }
   }
 `

@@ -1,7 +1,7 @@
-import Layout from "../../components/Layout"
+import Layout from "../../../components/Layout"
 import fetch from 'node-fetch'
-import Prodie from "../../components/product/Prodie"
-import Details from "../../components/product/Details"
+import Prodie from "../../../components/product/Prodie"
+import Details from "../../../components/product/Details"
 
 const BeerProduct = ({ bid, rsp }) => {
     return (
@@ -18,8 +18,6 @@ export const getStaticPaths = async() => {
     for (let i = 0; i < beerIdLength.length; i++) {
         beerIdLength[i] = i + 1
     }
-
-    console.log(beerIdLength)
 
     const paths = beerIdLength.map(beerId => ({
         params: {

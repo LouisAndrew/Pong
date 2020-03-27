@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 const DShowcaseCard = React.forwardRef((props, ref) => {
     return (
-        <Container big={props.big} onClick={props.onClick} href={props.href}>
+        <Container prod={props.prod} big={props.big} onClick={props.onClick} href={props.href}>
             <img src={props.data.image_url} />
-            <Details big={props.big}>
+            <Details prod={props.prod} big={props.big}>
                 <h2>{props.data.name} </h2>
                 <h3>{props.data.tagline}</h3>
                 <h4>First Brewed: {props.data.first_brewed} </h4>
@@ -19,13 +19,13 @@ export default DShowcaseCard
 const Details = styled.div`
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.flexFlow('column nowrap')};
-  width: 100%;
+  width: ${props => props.prod ? '60%' : '100%'};
   margin: 0 5rem;
   text-align: ${props => !props.big && 'right'};
 
   h2 {
       font-weight: 400;
-      font-size: 3rem;
+      font-size: ${props => props.prod ? '2rem' : '3rem'};
   }
 
   h3 {
@@ -60,6 +60,7 @@ const Container = styled.a`
 
   div h2, div h3, div h4 {
       transition: 0.4s;
+
   }
 
 
@@ -77,6 +78,28 @@ const Container = styled.a`
       img {
         height: ${props => props.big ? '220px' : '180px'};
         width: ${props => props.big ? '55px' : '50px'};
+      }
+
+      /* div h2, div h3, div h4 {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      } */
+
+      div h2 {
+          font-size: ${props => props.prod && '2rem'};
+      }
+
+      div h3 {
+          font-size: 0.6rem;
+      }
+
+      div h4 {
+          font-size: 0.5rem;
+      }
+
+      div {
+          margin: 0 1rem;
       }
   }
 

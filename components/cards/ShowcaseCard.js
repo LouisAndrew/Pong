@@ -26,5 +26,5 @@ export default function ShowcaseCard(props) {
             doneLoading()
         })
     }
-    return loaded ? <Link href={`/products/${props.beerId}`} passHref><DShowcaseCard big={props.big} data={data} /></Link> : <></>
+    return loaded ? <Link href={`/products/beers/${props.beerId}`} passHref><DShowcaseCard prod={props.prod} big={props.big} data={data} /></Link> : <></>
 }

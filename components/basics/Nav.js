@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Navigation from './Navigation'
+import SvgPong from './assets/SvgPong'
+import Search from './Search'
+import Link from 'next/link'
 
 export default function Nav() {
 
@@ -20,11 +23,17 @@ export default function Nav() {
 
     return (
         <Container id='nav'>
-            <Wrapper id='logo'></Wrapper>
+            <Wrapper id='logo'>
+                <Link href='/'>
+                    <SvgPong id='pong' />
+                </Link>
+            </Wrapper>
             <NavWrap id='navigation'>
                 <Navigation />
             </NavWrap>
-            <Wrapper></Wrapper>
+            <Wrapper>
+                <Search />
+            </Wrapper>
         </Container>
     )
 }
@@ -32,19 +41,26 @@ export default function Nav() {
 const Wrapper = styled.div`
   height: 100%;
   width: 25%;
-  border: 1px solid #000;
   ${({ theme }) => theme.flexOrder(2)};
 
   &#logo {
-      background-color: #fff;
       ${({ theme }) => theme.flexOrder(0)};
+      ${({ theme }) => theme.flex()};
+      ${({ theme }) => theme.alignItems('center')};
+      position: relative;
+  }
+
+  #pong {
+      height: 70%;
+      width: 20%;
+      position: absolute;
+      left: 3vw;
   }
 `
 
 const NavWrap = styled.div`
   height: 100%;
   width: 50%;
-  border: 1px solid #000;
   ${({ theme }) => theme.flexOrder(1)};
 `
 
@@ -68,7 +84,13 @@ const Container = styled.nav`
 
       #logo {
           ${({ theme }) => theme.flexOrder(1)};
+          ${({ theme }) => theme.justifyContent('center')};
           width: 50%;
+      }
+
+      #pong {
+          position: relative;
+          left: 0;
       }
   }
 `
