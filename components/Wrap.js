@@ -12,6 +12,7 @@ export default function Wrap(props) {
 const Container = styled.div`
   ${({ theme }) => theme.fitContainer()};
   padding: ${({ theme }) => theme.pad};
+  ${({ theme }) => theme.flex()};
 
   @media only screen and ${({ theme }) => theme.sizes.tablet} {
       
