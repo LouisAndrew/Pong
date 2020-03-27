@@ -7,13 +7,13 @@ const Result = props => {
     
     let content = []
     const firstIndex = props.indexes[0]
-    const numOfItems = props.indexes[1] - firstIndex + 2
-    console.log(numOfItems)
-    for (let i = firstIndex; i < numOfItems; i++) {
+    const numOfItems = props.indexes[1] - firstIndex + 1
+    for (let i = firstIndex; i < numOfItems + firstIndex; i++) {
         const temp = <Item>
                         <ShowcaseCard prod beerId={i} />
                      </Item>
         content = [...content, temp]
+        console.log(content)
     }
 
     return (
