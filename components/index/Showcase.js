@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Page from '../Page'
 import Wrap from '../Wrap'
 import ShowcaseCard from '../cards/ShowcaseCard'
-import BrowseItem from '../cards/BrowseItem'
+import Link from 'next/link'
 
 export default function Showcase() {
 
@@ -15,14 +15,13 @@ export default function Showcase() {
                     <h1>Our Finest Masterpieces</h1>
                     <Case className='case'>
                         <ItemBig className='big'>
-                            <ShowcaseCard big beerId='12' />
-                            {/* <BrowseItem big {...itemDatas[0]} /> */}
+                              <ShowcaseCard big beerId='12' />
                         </ItemBig>
                         <Item className='small'>
-                            <ShowcaseCard beerId='49' />
+                              <ShowcaseCard beerId='49' />
                         </Item>
                         <Item className='small'>
-                            <ShowcaseCard beerId='31' />
+                              <ShowcaseCard beerId='31' />
                         </Item>
                         <ItemBig className='big'>
                             <ShowcaseCard big beerId='52' />

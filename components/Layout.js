@@ -1,4 +1,5 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import Nav from './basics/Nav'
 // import Navbar from './navigation/Navbar'
 // import Foot from './footer/Foot'
 export default function Layout(props) {
@@ -137,6 +138,13 @@ export default function Layout(props) {
 
             return toRet
         },
+        flexOrder: int => (`
+            -webkit-box-ordinal-group: ${int + 1};
+            -moz-box-ordinal-group: ${int + 1};
+            -webkit-order: ${int};
+            -ms-flex-order: ${int};
+            order: ${int};
+        `),
         center: () => (`
             display: flex;
             justify-content: center;
@@ -178,7 +186,7 @@ export default function Layout(props) {
         <div>
             <Global />
             <ThemeProvider theme={theme}>
-                {/* <Navbar /> */}
+                <Nav />
                 {props.children}
                 {/* <Foot /> */}
             </ThemeProvider>

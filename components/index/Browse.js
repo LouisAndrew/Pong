@@ -26,9 +26,9 @@ export default function Browse() {
             <Wrap>
 
                 <Container>
-                    {itemDatas.map(x => <Item>
-                                            <BrowseItem {...x} />
-                                        </Item>)}
+                    {itemDatas.map((x, i) => <Item key={i}>
+                                                <BrowseItem {...x} />
+                                             </Item>)}
                 </Container>
 
             </Wrap>

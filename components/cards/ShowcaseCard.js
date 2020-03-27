@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import DShowcaseCard from './DShowcaseCard'
+import Link from 'next/link'
 
 export default function ShowcaseCard(props) {
 
@@ -25,5 +26,5 @@ export default function ShowcaseCard(props) {
             doneLoading()
         })
     }
-    return loaded ? <DShowcaseCard big={props.big} data={data} /> : <></>
+    return loaded ? <Link href={`/products/${props.beerId}`} passHref><DShowcaseCard big={props.big} data={data} /></Link> : <></>
 }

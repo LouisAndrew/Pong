@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function DShowcaseCard(props) {
+const DShowcaseCard = React.forwardRef((props, ref) => {
     return (
-        <Container big={props.big}>
+        <Container big={props.big} onClick={props.onClick} href={props.href}>
             <img src={props.data.image_url} />
             <Details big={props.big}>
                 <h2>{props.data.name} </h2>
@@ -12,7 +12,9 @@ export default function DShowcaseCard(props) {
             </Details>
         </Container>
     )
-}
+})
+
+export default DShowcaseCard
 
 const Details = styled.div`
   ${({ theme }) => theme.flex()};
@@ -32,7 +34,7 @@ const Details = styled.div`
   }
 `
 
-const Container = styled.div`
+const Container = styled.a`
   ${({ theme }) => theme.fitContainer()};
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.alignItems('center')};
@@ -40,6 +42,8 @@ const Container = styled.div`
   padding: 2rem;
   position: relative;
   transition: 0.4s;
+  color: #000;
+  text-decoration: none;
 
   /* img {
       height: ${props => props.big ? '110%' : '80%'};
