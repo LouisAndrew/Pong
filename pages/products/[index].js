@@ -4,6 +4,7 @@ import PageNavigation from "../../components/product/PageNavigation"
 
 
 const IndexResult = ({ indexes }) => {
+    console.log(indexes)
     return (
         <Layout>
             <Result indexes={indexes} />
@@ -33,7 +34,7 @@ export const getStaticPaths = async() => {
 
     return {
         paths,
-        fallback: true
+        fallback: false
     }
 }
 
