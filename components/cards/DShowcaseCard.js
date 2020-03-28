@@ -19,7 +19,7 @@ export default DShowcaseCard
 const Details = styled.div`
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.flexFlow('column nowrap')};
-  width: ${props => props.prod ? '60%' : '100%'};
+  width: ${props => props.prod ? '50%' : '100%'};
   margin: 0 5rem;
   text-align: ${props => !props.big && 'right'};
 

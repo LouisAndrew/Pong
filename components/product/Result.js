@@ -7,13 +7,15 @@ const Result = props => {
     
     let content = []
     const firstIndex = props.indexes[0]
-    const numOfItems = props.indexes[1] - firstIndex + 1
+    let lastIndex = props.indexes[1] > 325 ? 325 : props.indexes[1]
+
+    const numOfItems = lastIndex - firstIndex + 1
+    
     for (let i = firstIndex; i < numOfItems + firstIndex; i++) {
-        const temp = <Item>
+        const temp = <Item className='result-item'>
                         <ShowcaseCard prod beerId={i} />
                      </Item>
         content = [...content, temp]
-        console.log(content)
     }
 
     return (
@@ -33,7 +35,7 @@ export default Result
 
 const Item = styled.div`
   height: 48vh;
-  width: 48%;
+  width: 32%;
   background-color: ${({ theme }) => theme.color};
 `
 
@@ -54,4 +56,11 @@ const Case = styled.div`
 const Container = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.color};
+
+  @media only screen and ${({ theme }) => theme.sizes.tablet} {
+    
+      .result-item {
+        width: 49%;
+      }
+  }
 `

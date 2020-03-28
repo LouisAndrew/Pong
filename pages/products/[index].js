@@ -1,13 +1,14 @@
 import Layout from "../../components/Layout"
 import Result from "../../components/product/Result"
 import PageNavigation from "../../components/product/PageNavigation"
+import fetch from 'node-fetch'
 
 
 const IndexResult = ({ indexes }) => {
     return (
         <Layout>
             <Result indexes={indexes} />
-            {/* <PageNavigation num={numbers} /> */}
+            <PageNavigation num={indexes[1]} />
         </Layout>
     )
 }
