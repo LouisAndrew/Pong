@@ -1,7 +1,6 @@
 import Layout from "../../components/Layout"
 import Result from "../../components/product/Result"
 import PageNavigation from "../../components/product/PageNavigation"
-import fetch from 'node-fetch'
 
 
 const IndexResult = ({ indexes }) => {
@@ -40,10 +39,10 @@ export const getStaticPaths = async() => {
 
 export const getStaticProps = async({ params: index }) => {
 
-    const pageNumber = index.index.split('-')[1]
+    const pageNumber = await index.index.split('-')[1]
     const itemPerPage = 12
-    const lastIndex = pageNumber * itemPerPage
-    const firstIndex = lastIndex - itemPerPage + 1
+    const lastIndex =  await pageNumber * itemPerPage
+    const firstIndex = await lastIndex - itemPerPage + 1
 
     return {
         props: {
