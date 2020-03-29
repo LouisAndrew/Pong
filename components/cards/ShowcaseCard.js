@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import DShowcaseCard from './DShowcaseCard'
 import Link from 'next/link'
 import fetch from 'node-fetch'
+import ProductCard from './ProductCard'
 
 export default function ShowcaseCard(props) {
 
@@ -31,5 +32,6 @@ export default function ShowcaseCard(props) {
             console.log(e)
         }
     }
-    return loaded ? <Link href={`/products/beers/${props.beerId}`} passHref><DShowcaseCard prod={props.prod} big={props.big} data={data} /></Link> : <></>
+    return loaded && <Link href={`/products/beers/${props.beerId}`} passHref><ProductCard right={props.right} headline={props.headline} data={data} /></Link>
+    {/* <DShowcaseCard prod={props.prod} big={props.big} data={data} /> */}
 }

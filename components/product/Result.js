@@ -36,7 +36,8 @@ export default Result
 const Item = styled.div`
   height: 48vh;
   width: 32%;
-  background-color: ${({ theme }) => theme.color};
+  background-color: ${({ theme }) => theme.colorTransparent};
+  margin: 1vh 0;
 `
 
 const ItemBig = styled(Item)`
@@ -45,7 +46,6 @@ const ItemBig = styled(Item)`
 
 const Case = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.color};
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.flexFlow('row wrap')};
   ${({ theme }) => theme.alignItems('center')};
@@ -57,10 +57,24 @@ const Container = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.color};
 
-  @media only screen and ${({ theme }) => theme.sizes.tablet} {
+  /* two items on tablet. */
+  @media only screen and (max-width: 1024px) {
+
+      & {
+        padding: 1vh;
+      }
     
       .result-item {
-        width: 49%;
+        width: 48%;
+        height: 30vh;
+        padding: 1vh;
+      }
+  }
+
+  @media only screen and ${({ theme }) => theme.sizes.mobile} {
+    
+      .result-item {
+        width: 100%;
       }
   }
 `

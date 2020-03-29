@@ -15,16 +15,16 @@ export default function Showcase() {
                     <h1>Our Finest Masterpieces</h1>
                     <Case className='case'>
                         <ItemBig className='big'>
-                              <ShowcaseCard big beerId='12' />
+                              <ShowcaseCard headline right beerId='12' />
                         </ItemBig>
                         <Item className='small'>
-                              <ShowcaseCard beerId='49' />
+                              <ShowcaseCard headline beerId='49' />
                         </Item>
                         <Item className='small'>
-                              <ShowcaseCard beerId='31' />
+                              <ShowcaseCard headline right beerId='31' />
                         </Item>
                         <ItemBig className='big'>
-                            <ShowcaseCard big beerId='52' />
+                            <ShowcaseCard headline big beerId='52' />
                         </ItemBig>
                     </Case>
                 </Container>

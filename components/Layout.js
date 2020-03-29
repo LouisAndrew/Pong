@@ -7,6 +7,7 @@ export default function Layout(props) {
 
     const theme = {
         color: '#EFEFEF',
+        colorTransparent: '#C4C4C4',
         footColor: '#434343',
         pad: '2em 5em',
         padMobile: '2em',
