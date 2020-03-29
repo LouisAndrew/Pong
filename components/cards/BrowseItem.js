@@ -21,16 +21,15 @@ const Container = styled.div`
 
   & div h3 {
       opacity: 1;
+      transition: 0.5s;
+      text-align: center;
+      font-weight: 400;
+      width: 60%;
       color: #fff;
   }
 
   html.no-touch & div h3 {
-      width: 60%;
-      color: #fff;
       opacity: 0.7;
-      transition: 0.5s;
-      text-align: center;
-      font-weight: 400;
   }
   
   & > div {
@@ -61,6 +60,7 @@ const Container = styled.div`
        
        h3 {
            bottom: 1rem;
+           font-size: 1.3rem;
        }
    }
 
