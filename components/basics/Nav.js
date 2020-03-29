@@ -7,19 +7,19 @@ import Link from 'next/link'
 
 export default function Nav() {
 
-    useEffect(() => {
-        let prevScroll = window.pageYOffset
-        const nav = document.getElementById('nav')
-        window.onscroll = () => {
-            const scroll = window.pageYOffset
-            if (prevScroll > scroll) {
-                nav.style.top = 0
-            } else {
-                nav.style.top = '-8vh'
-            }
-            prevScroll = scroll
-        }
-    })
+    // useEffect(() => {
+    //     let prevScroll = window.pageYOffset
+    //     const nav = document.getElementById('nav')
+    //     window.onscroll = () => {
+    //         const scroll = window.pageYOffset
+    //         if (prevScroll > scroll) {
+    //             nav.style.top = 0
+    //         } else {
+    //             nav.style.top = '-8vh'
+    //         }
+    //         prevScroll = scroll
+    //     }
+    // })
 
     return (
         <Container id='nav'>
@@ -68,12 +68,13 @@ const Container = styled.nav`
   height: 8vh;
   width: 100%;
   z-index: 2;
-  position: fixed;
+  position: absolute;
+  transition: 0.2s;
   top: 0;
-  transition: 0.5s;
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.justifyContent('center')};
   ${({ theme }) => theme.flexFlow('row nowrap')};
+  background-color: rgba(0, 0, 0, 0);
 
   @media only screen and ${({ theme }) => theme.sizes.tablet} {
       

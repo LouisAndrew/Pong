@@ -1,11 +1,13 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Nav from './basics/Nav'
+import Footer from './basics/Footer'
 // import Navbar from './navigation/Navbar'
 // import Foot from './footer/Foot'
 export default function Layout(props) {
 
     const theme = {
         color: '#EFEFEF',
+        footColor: '#434343',
         pad: '2em 5em',
         padMobile: '2em',
         sizes: {
@@ -164,17 +166,92 @@ export default function Layout(props) {
           box-sizing: border-box;
       }
 
-      html {
-          font-size: 1em;
-      }
-
       body {
         font-family: 'Raleway', sans-serif;
         font-weight: 200;
+        font-size: 100%;
+      }
+
+      h1 {
+          font-size: 3rem;
+      }
+
+      h2 {
+          font-size: 2.5rem;
+      }
+
+      h3 {
+          font-size: 2rem;
+      }
+
+      h4 {
+          font-size: 1.5rem;
+      }
+
+      h5 {
+          font-size: 1rem;
+      }
+
+      h6 {
+          font-size: 0.5rem;
       }
 
       h1, h2, h3, h4, h5, h6 {
           font-weight: 200;
+      }
+
+      @media only screen and (max-width: 1023px) {
+
+        h1 {
+          font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.3rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+        }
+
+        h5 {
+            font-size: 0.8rem;
+        }
+
+        h6 {
+            font-size: 0.5rem;
+        } 
+      }
+
+      @media only screen and (max-width:464px) {
+
+        h1 {
+          font-size: 2.3rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+        }
+
+        h5 {
+            font-size: 0.6rem;
+        }
+
+        h6 {
+            font-size: 0.3rem;
+        } 
       }
 
       ${'' /* div {
@@ -188,7 +265,7 @@ export default function Layout(props) {
             <ThemeProvider theme={theme}>
                 <Nav />
                 {props.children}
-                {/* <Foot /> */}
+                <Footer />
             </ThemeProvider>
         </div>
     )

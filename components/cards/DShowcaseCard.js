@@ -207,15 +207,15 @@ const Container = styled.a`
       }
   }
 
-  &:hover {
+  &:hover, &.active {
       background-color: rgba(21, 21, 21, 0.6);
   }
 
-  &:hover div h2, &:hover div h3, &:hover div h4 {
+  &:hover div h2, &:hover div h3, &:hover div h4,&:active div h2, &:active div h3, &:active div h4 {
       color: #fff;
   }
 
-  &:hover img {
+  &:hover img, &:active img {
       transform: scale(1.2);
   }
 `
