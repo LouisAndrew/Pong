@@ -66,7 +66,7 @@ const PageLink = styled.a`
   padding:2vh;
   font-weight: 500;
   color: ${props => props.page ? '#000' : '#fff'};
-  background-color: ${props => props.page ? '#fff' : 'rgba(21, 21, 21, 0.6)'};
+  background-color: ${props => props.page ? '#fff' : 'rgba(152, 152, 152, 0.8)'};
   transition: 0.5s;
 
   &:hover {
@@ -87,7 +87,7 @@ const PageIndex = styled.div`
 const Container = styled.nav`
   height: 10vh;
   width: 100%;
-  background-color: rgba(21, 21, 21, 0.6);
+  background-color: ${({ theme }) => theme.footColor};;
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.justifyContent('center')};
   ${({ theme }) => theme.alignItems('center')};

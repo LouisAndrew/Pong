@@ -2,12 +2,14 @@ import Layout from "../../../components/Layout"
 import fetch from 'node-fetch'
 import Prodie from "../../../components/product/Prodie"
 import Details from "../../../components/product/Details"
+import ProductPgSc from "../../../components/product/ProductPgSc"
 
 const BeerProduct = ({ bid, rsp }) => {
     return (
         <Layout>
             <Prodie {...rsp[0]} />
             <Details {...rsp[0]} />
+            <ProductPgSc {...rsp[0]} />
         </Layout>
     )
 }

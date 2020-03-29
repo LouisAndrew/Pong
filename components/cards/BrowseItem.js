@@ -6,7 +6,7 @@ export default function BrowseItem(props) {
         <Container imgUrl={props.imgUrl}>
 
             <div>
-                <h2>{props.text}</h2>
+                <h3>{props.text}</h3>
             </div>
         </Container>
     )
@@ -19,7 +19,12 @@ const Container = styled.div`
   background-position: center;
   position: relative;
 
-  div h2 {
+  & div h3 {
+      opacity: 1;
+      color: #fff;
+  }
+
+  html.no-touch & div h3 {
       width: 60%;
       color: #fff;
       opacity: 0.7;
@@ -28,31 +33,41 @@ const Container = styled.div`
       font-weight: 400;
   }
   
-  &>div {
+  & > div {
       ${({ theme }) => theme.fitContainer()};
       ${({ theme }) => theme.flex()};
       ${({ theme }) => theme.justifyContent('center')};
       ${({ theme }) => theme.alignItems('center')};
-      background-color: rgba(21, 21, 21, 0);
+      background-color: rgba(21, 21, 21, 0.6);
       position: absolute;
       top: 0;
       transition: 0.5s;
   }
 
-  & > div:hover {
+  html.no-touch & > div {
+      background-color: rgba(21, 21, 21, 0);
+  }
+
+  html.no-touch & > div:hover {
       background-color: rgba(21, 21, 21, 0.6);
       cursor: pointer;
   }
 
-  & > div:hover h2 {
+  html.no-touch & > div:hover h3 {
       opacity: 1;
   }
 
    @media only screen and ${({ theme }) => theme.sizes.tablet} {
        
-       h2 {
-           font-size: 0.8rem;
+       h3 {
            bottom: 1rem;
+       }
+   }
+
+   @media only screen and ${({ theme }) => theme.sizes.mobile} {
+       
+       h3 {
+           font-size: 0.7rem;
        }
    }
 `

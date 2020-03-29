@@ -49,11 +49,19 @@ const Container = styled.a`
       height: ${props => props.headline ? '90%' : '70%'};
   }
 
-  &:hover {
+  html.no-touch &:hover {
       background-color: rgba(21, 21, 21, 0.6);
   }
 
-  &:hover div {
+  html.no-touch &:hover div {
+      color: #fff;
+  }
+
+  &:active {
+    background-color: rgba(21, 21, 21, 0.6);
+  }
+
+  &:active div {
       color: #fff;
   }
 

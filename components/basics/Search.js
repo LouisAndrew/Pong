@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import SvgSearch from './assets/SvgSearch'
 
 export default function Search() {
 
+    const [touchable, setTouchable] = useState(false)
+
+    const checkNoTouch = () => {
+        
+        const touchClass = Array.from(document.documentElement.classList)
+        return touchClass.some(x => x === 'no-touch')
+    }
+
     const searchClick = () => {
         document.getElementById('text-input').classList.toggle('active')
     }
 
+    useEffect(() => {
+        setTouchable(!checkNoTouch())
+    })
+
     return (
         <Container>
             <TextInput placeholder='Search Here' id='text-input'></TextInput>
-            <SvgSearch onClick={searchClick} id='search-icon' />
+            <SvgSearch onMouseEnter={touchable && searchClick } onClick={searchClick} id='search-icon' />
         </Container>
     )
 }
@@ -50,7 +62,7 @@ const Container = styled.form`
       transition: 0.5s;
   }
 
-  #search-icon:hover {
+  html.no-touch & #search-icon:hover {
       transform: scale(2);
       cursor: pointer;
   }
