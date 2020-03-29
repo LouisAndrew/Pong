@@ -7,7 +7,7 @@ export default function Prodie(props) {
 
     return (
         <Page>
-            <Wrap>
+            <Wrap style={{ paddingBottom: 0 }}>
 
                 <Container>
                     <Inner>
@@ -88,10 +88,10 @@ const Inner = styled.div`
 `
 
 const Container = styled.div`
-  height: 80%;
+  height: 90%;
   width: 100%;
   background-color: ${({ theme }) => theme.color};
-  ${({ theme }) => theme.alignSelf('center')};
+  ${({ theme }) => theme.alignSelf('flex-end')};
   padding: 2vh;
 
   @media only screen and ( max-width: 1024px ) {

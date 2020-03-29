@@ -10,14 +10,13 @@ export default function Search() {
 
     return (
         <Container>
-            <TextInput id='text-input'></TextInput>
+            <TextInput placeholder='Search Here' id='text-input'></TextInput>
             <SvgSearch onClick={searchClick} id='search-icon' />
         </Container>
     )
 }
 
 const TextInput = styled.input`
-  ${({ theme }) => theme.fitContainer()};
   border: none;
   outline: none;
   padding: 0;
@@ -25,11 +24,15 @@ const TextInput = styled.input`
   color: #fff;
   font-size: 0.9rem;
   transition: 0.5s;
-  width: 0px;
+  position: absolute;
+  top: 8vh;
+  height: 0;
+  right: 4vw;
+  transition: 0.5s;
 
   &.active {
-      width: 100%;
-      padding: 0.5vh 1rem;
+      height: fit-content;
+      padding: 1vh;
   }
 `
 
@@ -61,6 +64,10 @@ const Container = styled.form`
       #search-icon {
           right: 2vh;
           transform: scale(1);
+      }
+
+      input {
+          transition: 0.2s;
       }
 
       input.active {

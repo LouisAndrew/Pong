@@ -56,7 +56,7 @@ const Container = styled.div`
       list-style: none;
       padding: 2rem;
       font-weight: 600;
-      transition: 0.5s;
+      transition: 0.2s;
   }
 
   #menu {

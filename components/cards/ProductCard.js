@@ -53,6 +53,10 @@ const Container = styled.a`
       background-color: rgba(21, 21, 21, 0.6);
   }
 
+  &:hover div {
+      color: #fff;
+  }
+
   @media only screen and ${({ theme }) => theme.sizes.mobile} {
       
       img {

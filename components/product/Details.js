@@ -34,21 +34,24 @@ const Items = styled.div`
 `
 
 const Wrap = styled.div`
-  background-color: #DDCAB4;
+  background-color: ${({ theme }) => theme.color};;
   width: 100%;
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.flexFlow('row wrap')};
   padding: ${({ theme }) => theme.pad};
+  padding-top: 0;
 `
 
 const Container = styled.div`
   width: 100%;
   padding: ${({ theme }) => theme.pad};
+  padding-top: 0;
 
   @media only screen and ${({ theme }) => theme.sizes.tablet} {
 
       &>div, & {
           padding: ${({ theme }) => theme.padMobile};
+          padding-top: 0;
       }
       
       .itm {
