@@ -2,14 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-const PageNavigation = (props) => {
-    const pageNumber = props.num / 12
+const PageNavigation = ({ num, pageMax, href, numOfIndexes }) => {
+    const pageNumber = num / 12
 
     //creating tha linksssss
-    const numOfIndexes = 5
     //hard coded here..
-    const pageMax = 28
-
 
     //find num of pages before and after current
     const createPageIndexes = (num, pageMax, numOfIndexes) => {
@@ -39,7 +36,7 @@ const PageNavigation = (props) => {
 
         let toReturn = []
         for (let i = beforeAfter[0]; i < beforeAfter[1]; i++ ) {
-            const temp = <Link href={`/products/index-${i}`}>
+            const temp = <Link href={`${href}${i}`}>
                             <PageLink page={i === pageNumber && true}>{i}</PageLink>
                          </Link>
             toReturn = [...toReturn, temp]

@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import DShowcaseCard from './DShowcaseCard'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import fetch from 'node-fetch'
 import ProductCard from './ProductCard'
 
 export default function ShowcaseCard(props) {
 
-    const [ loaded, setLoaded ] = useState(false)
     const [ name, setName ] = useState('')
+    const [ beerId, setBeerId ] = useState(0)
     const [ data, setData ] = useState()
+    const [ loaded, setLoaded ] = useState(false)
 
     const doneLoading = () => {
         setLoaded(true)
@@ -20,7 +20,8 @@ export default function ShowcaseCard(props) {
         return rsp
     }
     
-    if (!name) {
+    if (beerId !== props.beerId) {
+        setBeerId(props.beerId)
         try {
             getData()
             .then(dt => {

@@ -12,17 +12,17 @@ export default function Prodie(props) {
                 <Container>
                     <Inner>
                         <img src={props.image_url} />
-                        <div>
+                        <div className='det'>
                             <h1>{props.name}</h1>
                             <h3>{props.tagline} </h3>
+                            <CTA className='cta'>
+                                <h4>price: 1$</h4>
+                                <div>
+                                    <Buy>Buy Now</Buy>
+                                    <Cart>Add To Cart</Cart>
+                                </div>
+                            </CTA>
                         </div>
-                        <CTA className='cta'>
-                            <h4>price: 1$</h4>
-                            <div>
-                                <Buy>Buy Now</Buy>
-                                <Cart>Add To Cart</Cart>
-                            </div>
-                        </CTA>
                     </Inner>
                 </Container>
 
@@ -74,7 +74,7 @@ const Inner = styled.div`
       height: 80%;
   }
 
-  & > div:not(:last-child) {
+  .det {
       margin: 0 5rem;
   }
 
@@ -125,7 +125,7 @@ const Container = styled.div`
 
   @media only screen and ${({ theme }) => theme.sizes.mobile} {
 
-      & > div > div:not(:last-child) {
+      .det {
           margin: 0 2rem;
       }
       
@@ -146,7 +146,7 @@ const Container = styled.div`
       }
 
       .cta button {
-          font-size: 0.7rem;
+          font-size: 0.5rem;
       }
   }
 

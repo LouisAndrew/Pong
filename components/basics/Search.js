@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import styled from 'styled-components'
 import SvgSearch from './assets/SvgSearch'
+import SearchContext from '../../hooks/SearchContext'
 
 export default function Search() {
 
+    const searchC = useContext(SearchContext)
+
     const [touchable, setTouchable] = useState(false)
+    const input = React.createRef()
 
     const checkNoTouch = () => {
         
@@ -16,13 +20,31 @@ export default function Search() {
         document.getElementById('text-input').classList.toggle('active')
     }
 
+    const getSearch = async(param) => {
+        const rq = await fetch(`https://api.punkapi.com/v2/beers?beer_name=${param}`)
+        const rsp = await rq.ok ? rq.json() : false
+        return rsp
+    }
+
+    const submitSearch = async(e) => {
+        e.preventDefault()
+        const data = await getSearch(input.current.value)
+        input.current.value = ''
+        if (data.length > 0) {
+            searchC.search(data)
+        } else {
+            console.log('nonono')
+        }
+        document.location.href = '/products/search/sr-1'
+    }
+
     useEffect(() => {
         setTouchable(!checkNoTouch())
     })
 
     return (
-        <Container>
-            <TextInput placeholder='Search Here' id='text-input'></TextInput>
+        <Container onSubmit={submitSearch}>
+            <TextInput ref={input} placeholder='Search Here' id='text-input'></TextInput>
             <SvgSearch onMouseEnter={touchable && searchClick } onClick={searchClick} id='search-icon' />
         </Container>
     )

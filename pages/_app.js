@@ -1,9 +1,20 @@
 import App from 'next/app'
+import React from 'react'
+import { SearchProvider } from '../hooks/SearchContext'
 
-const MyApp = ({ Component, pageProps }) => {
-    console.log('this is mui app')
-    return <Component {...pageProps} />
+export default class MyApp extends App {
+
+    render() {
+
+        const { Component, pageProps } = this.props
+
+        return (
+            <div>
+                <SearchProvider>
+                    <Component {...pageProps} />
+                </SearchProvider>
+            </div>
+        )
+    }
 }
-
-export default MyApp
 

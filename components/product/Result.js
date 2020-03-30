@@ -1,22 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import Wrap from '../Wrap'
 import styled from 'styled-components'
 import ShowcaseCard from '../cards/ShowcaseCard'
 
-const Result = props => {
+const Result = ({ indexes }) => {
+  console.log(indexes)
     
-    let content = []
-    const firstIndex = props.indexes[0]
-    let lastIndex = props.indexes[1] > 325 ? 325 : props.indexes[1]
-
-    const numOfItems = lastIndex - firstIndex + 1
-    
-    for (let i = firstIndex; i < numOfItems + firstIndex; i++) {
-        const temp = <Item className='result-item'>
-                        <ShowcaseCard prod beerId={i} />
-                     </Item>
-        content = [...content, temp]
-    }
+    let content = indexes.map((x, i) => (
+      <Item className='result-item'>
+          <ShowcaseCard prod beerId={x} key={i} />
+      </Item>
+    ))
 
     return (
         <>

@@ -4,11 +4,24 @@ import PageNavigation from "../../components/product/PageNavigation"
 
 
 const IndexResult = ({ indexes }) => {
-    console.log(indexes)
+    
+    //param = array index 0 indexFrom, index 1 indexTo
+    const makeIdArrays = range => {
+        let toReturn = new Array(range[1] - range[0] + 1)
+        for (let i = range[0], j = 0; i <= range[1], j < toReturn.length; i++, j++) {
+            toReturn[j] = i
+        }
+
+        return toReturn
+    }
+
+    //array of beerIds to return from the page
+    const pageIndex = makeIdArrays(indexes)
+
     return (
         <Layout>
-            <Result indexes={indexes} />
-            <PageNavigation num={indexes[1]} />
+            <Result indexes={pageIndex} />
+            <PageNavigation numOfIndexes={5} href='/products/index-' pageMax={28} num={indexes[1]} />
         </Layout>
     )
 }

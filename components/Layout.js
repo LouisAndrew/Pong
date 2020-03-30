@@ -2,8 +2,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Nav from './basics/Nav'
 import Footer from './basics/Footer'
 import React, { useEffect } from 'react'
-// import Navbar from './navigation/Navbar'
-// import Foot from './footer/Foot'
+
 export default function Layout(props) {
 
     const theme = {
