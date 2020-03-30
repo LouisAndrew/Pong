@@ -45,7 +45,7 @@ export default function Search() {
     return (
         <Container onSubmit={submitSearch}>
             <TextInput ref={input} placeholder='Search Here' id='text-input'></TextInput>
-            <SvgSearch onMouseEnter={touchable && searchClick } onClick={searchClick} id='search-icon' />
+            <SvgSearch onMouseEnter={touchable ? searchClick : undefined } onClick={searchClick} id='search-icon' />
         </Container>
     )
 }

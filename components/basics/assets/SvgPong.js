@@ -1,6 +1,6 @@
 import * as React from "react"
 
-function SvgPong(props) {
+const SvgPong = React.forwardRef((props, ref) => {
   return (
     <svg width="1em" height="1em" viewBox="0 0 28 28" fill="none" {...props}>
       <path
@@ -9,6 +9,6 @@ function SvgPong(props) {
       />
     </svg>
   )
-}
+})
 
 export default SvgPong

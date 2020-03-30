@@ -6,7 +6,7 @@ const ProductCard = React.forwardRef((props, ref) => {
     const { image_url, name, tagline } = props.data
 
     return (
-        <Container right={props.right} headline={props.headline} onClick={props.onClick} href={props.href}>
+        <Container right={props.right} headline={props.headline} onClick={props.onClick} href={props.href} ref={ref}>
             <img src={image_url} />
             <Details right={props.right} headline={props.headline} name={name}>
                 <h3>{name}</h3>

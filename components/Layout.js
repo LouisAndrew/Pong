@@ -267,11 +267,15 @@ export default function Layout(props) {
         // }
 
         // console.log(touchsupport)
+        const addClass = () => {
+            document.documentElement.classList -= ' no-touch'
+        }
+
         document.documentElement.classList += ' no-touch'
         document.addEventListener('touchstart', () => {
-            document.documentElement.classList -= ' no-touch'
+            addClass()
         }, () => {
-            document.removeEventListener('touchstart')
+            document.removeEventListener('touchstart', addClass, false)
         })
 
     }

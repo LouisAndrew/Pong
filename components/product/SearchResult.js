@@ -33,7 +33,7 @@ const SearchResult = ({ index }) => {
     let content = contentArray ? 
     <>
         <Result indexes={contentArray} /> 
-        <PageNavigation num={index*12} pageMax={contentArray && Math.trunc(queryArray.length / 12)} href='/products/search/sr-' numOfIndexes={contentArray && Math.trunc(queryArray.length / 12)} />
+        <PageNavigation num={index*12} pageMax={contentArray && Math.trunc(queryArray.length / 12)} href='/products/search/[sr]' as='/products/search/sr-' numOfIndexes={contentArray && Math.trunc(queryArray.length / 12)} />
     </>
     : <NotFound />
 

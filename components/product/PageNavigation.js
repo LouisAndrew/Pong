@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-const PageNavigation = ({ num, pageMax, href, numOfIndexes }) => {
+const PageNavigation = ({ num, pageMax, href, numOfIndexes, as }) => {
     const pageNumber = num / 12
 
     //creating tha linksssss
@@ -36,7 +36,7 @@ const PageNavigation = ({ num, pageMax, href, numOfIndexes }) => {
 
         let toReturn = []
         for (let i = beforeAfter[0]; i < beforeAfter[1]; i++ ) {
-            const temp = <Link href={`${href}${i}`}>
+            const temp = <Link href={href} as={`${as}${i}`} key={i}>
                             <PageLink page={i === pageNumber && true}>{i}</PageLink>
                          </Link>
             toReturn = [...toReturn, temp]

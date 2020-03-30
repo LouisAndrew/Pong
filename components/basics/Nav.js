@@ -24,7 +24,7 @@ export default function Nav() {
     return (
         <Container id='nav'>
             <Wrapper id='logo'>
-                <Link href='/'>
+                <Link href='/' passHref>
                     <SvgPong id='pong' />
                 </Link>
             </Wrapper>

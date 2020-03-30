@@ -33,6 +33,6 @@ export default function ShowcaseCard(props) {
             console.log(e)
         }
     }
-    return loaded && <Link href={`/products/beers/${props.beerId}`} passHref><ProductCard right={props.right} headline={props.headline} data={data} /></Link>
+    return loaded && <Link href={`/products/beers/[bid]`} as={`/products/beers/${beerId}`} passHref><ProductCard right={props.right} headline={props.headline} data={data} /></Link>
     {/* <DShowcaseCard prod={props.prod} big={props.big} data={data} /> */}
 }

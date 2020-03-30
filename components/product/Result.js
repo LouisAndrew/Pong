@@ -7,8 +7,8 @@ const Result = ({ indexes }) => {
   console.log(indexes)
     
     let content = indexes.map((x, i) => (
-      <Item className='result-item'>
-          <ShowcaseCard prod beerId={x} key={i} />
+      <Item className='result-item' key={i}>
+          <ShowcaseCard prod beerId={x} />
       </Item>
     ))
 

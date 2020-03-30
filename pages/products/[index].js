@@ -21,7 +21,7 @@ const IndexResult = ({ indexes }) => {
     return (
         <Layout>
             <Result indexes={pageIndex} />
-            <PageNavigation numOfIndexes={5} href='/products/index-' pageMax={28} num={indexes[1]} />
+            <PageNavigation numOfIndexes={5} href='/products/[index]' as='/products/index-' pageMax={28} num={indexes[1]} />
         </Layout>
     )
 }
