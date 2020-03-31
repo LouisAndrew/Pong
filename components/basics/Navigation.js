@@ -79,7 +79,7 @@ const Container = styled.div`
       transition: 1s;
   }
 
-  html.no-touch li a:hover {
+  html.no-touch & li a:hover {
       font-size: 1.5rem;
   }
 
