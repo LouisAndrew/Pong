@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Page from '../Page'
+import anime from 'animejs/lib/anime.min.js'
 
 export default function Hero() {
 
     const main = 'Beer, Mate?'
     const sub = 'explore our enormous collections of beer.'
 
+    useEffect(() => {
+        const tl = anime.timeline()
+        tl.add({
+            targets: '.anim-nav',
+            translateY: [-100, 0],
+            opacity: [ 0, 1 ],
+            delay: anime.stagger(100),
+            duration: 2000
+        })
+        tl.add({
+            targets: '.hero-word',
+            opacity: [0, 1],
+            duration: 1200
+        }, '-=1800')
+        
+    })
+
     return (
         <Page>
             <Container>
-                <Words>
+                <Words className='hero-word'>
                     <h1>{main}</h1>
                     <h3>{sub}</h3>
                 </Words>

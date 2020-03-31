@@ -1,10 +1,19 @@
-import React, { useContext } from 'react'
+import React, { useEffect } from 'react'
 import Wrap from '../Wrap'
 import styled from 'styled-components'
 import ShowcaseCard from '../cards/ShowcaseCard'
+import anime from 'animejs/lib/anime.min.js'
 
 const Result = ({ indexes }) => {
-  console.log(indexes)
+  
+    useEffect(() => {
+
+        anime({
+            targets: '.result-item',
+            opacity: [0, 1],
+            delay: anime.stagger(150)
+        })
+    })
     
     let content = indexes.map((x, i) => (
       <Item className='result-item' key={i}>
@@ -32,6 +41,7 @@ const Item = styled.div`
   width: 32%;
   background-color: ${({ theme }) => theme.colorTransparent};
   margin: 1vh 0;
+  transition: 0.3s;
 `
 
 const ItemBig = styled(Item)`

@@ -16,17 +16,17 @@ export default function Navigation() {
             <SvgMenu id='menu' onClick={clickMenu} />
             <ul id='nav-items'>
                 <SvgExit onClick={clickMenu} id='exit' className='go' />
-                <li>
+                <li className='anim-nav'>
                     <Link href='/'>
                         <a>Home</a>
                     </Link>
                 </li>
-                <li>
+                <li className='anim-nav'>
                     <Link href='/products/index-1'>
                         <a>Beers</a>
                     </Link>
                 </li>
-                <li>
+                <li className='anim-nav'>
                     <Link href='/about'>
                         <a>About</a>
                     </Link>

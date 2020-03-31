@@ -29,7 +29,7 @@ export default function Intro() {
         <Page style={{ height: '50vh', marginTop: '2vh' }}>
             <Wrap>
 
-                <Container>
+                <Container id='intro'>
                     <Inner>
                         <div>
                             {what.map(x => <h1>{x.toUpperCase()}</h1>)}

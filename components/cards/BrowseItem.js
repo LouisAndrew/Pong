@@ -1,12 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import SearchContext from '../../hooks/SearchContext'
 
-export default function BrowseItem(props) {
+export default function BrowseItem({ imgUrl, text, link }) {
+
+    const searchC = useContext(SearchContext)
+    const searchItem = async(param) => {
+        const rq = await fetch(`https://api.punkapi.com/v2/beers?${param}`)
+        const rsp = await rq.ok ? rq.json() : false
+        return rsp
+    }
+
+    const itemClick = async() => {
+
+        const data = await searchItem(link)
+        if (data && data.length > 0) {
+            searchC.search(data)
+        }
+        document.location.href = '/products/search/sr-1'
+    }
+
     return (
-        <Container imgUrl={props.imgUrl}>
+        <Container onClick={itemClick} imgUrl={imgUrl}>
 
             <div>
-                <h3>{props.text}</h3>
+                <h3>{text}</h3>
             </div>
         </Container>
     )

@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import SearchContext from '../../hooks/SearchContext'
 import Result from './Result'
 import PageNavigation from './PageNavigation'
-import styled from 'styled-components'
 import NotFound from '../errors/NotFound'
 
 const SearchResult = ({ index }) => {

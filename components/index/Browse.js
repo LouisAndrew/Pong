@@ -9,15 +9,18 @@ export default function Browse() {
     const itemDatas = [
         {
           imgUrl: 'https://live.staticflickr.com/3142/2729463236_1510ea4fff_b.jpg',
-          text: 'Search Beers made With Cascade'
+          text: 'Search Beers made With Cascade',
+          link: 'hops=cascade'
         },
         {
             imgUrl: 'https://p1.pxfuel.com/preview/153/400/42/wheat-beer-beer-beer-glass-foam.jpg',
-            text: 'Search Beers made with Ale Yeast'
+            text: 'Search Beers made with Ale Yeast',
+            link: 'yeast=ale_yeast'
         },
         {
             imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/04/John_Sleeman_India_Pale_Ale.jpg',
-            text: 'Search Beers made with Pale Malt'
+            text: 'Search Beers made with Pale Malt',
+            link: 'malt=pale_malt'
         }
       ]
 

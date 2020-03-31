@@ -2,6 +2,7 @@ import React from 'react'
 import Page from '../Page'
 import Wrap from '../Wrap'
 import styled from 'styled-components'
+import BreadCrumbs from './BreadCrumbs'
 
 export default function Prodie(props) {
 
@@ -10,18 +11,19 @@ export default function Prodie(props) {
             <Wrap style={{ paddingBottom: 0 }}>
 
                 <Container>
+                    <BreadCrumbs {...props} />
                     <Inner>
                         <img src={props.image_url} />
                         <div className='det'>
                             <h1>{props.name}</h1>
                             <h3>{props.tagline} </h3>
-                            <CTA className='cta'>
+                            {/* <CTA className='cta'>
                                 <h4>price: 1$</h4>
                                 <div>
                                     <Buy>Buy Now</Buy>
                                     <Cart>Add To Cart</Cart>
                                 </div>
-                            </CTA>
+                            </CTA> */}
                         </div>
                     </Inner>
                 </Container>
@@ -38,7 +40,6 @@ const Buy = styled.button`
   background-color: red;
   border: none;
   outline: none;
-  margin-right: 2rem;
   font-weight: 200;
 `
 
@@ -49,8 +50,7 @@ const Cart = styled(Buy)`
 const CTA = styled.div`
   ${({ theme }) => theme.flex()};
   ${({ theme }) => theme.flexFlow('column nowrap')};
-  position: absolute;
-  bottom: 10%;
+  margin-top: 10%;
 
   div {
       ${({ theme }) => theme.flex()};
@@ -118,7 +118,7 @@ const Container = styled.div`
 
       .cta button {
           font-size: 1rem;
-          margin-right: 2rem;
+          margin-right: 1rem;
           padding: 0.6rem;
       }
    }
@@ -138,7 +138,9 @@ const Container = styled.div`
       }
 
       div img {
+          max-width: 60%;
           height: 60%;
+          max-height: 60%;
       }
 
       .cta h4 {

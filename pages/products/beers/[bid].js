@@ -3,6 +3,7 @@ import fetch from 'node-fetch'
 import Prodie from "../../../components/product/Prodie"
 import Details from "../../../components/product/Details"
 import ProductPgSc from "../../../components/product/ProductPgSc"
+import BreadCrumbs from "../../../components/product/BreadCrumbs"
 
 const BeerProduct = ({ bid, rsp }) => {
     return (

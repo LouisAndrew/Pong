@@ -30,7 +30,7 @@ export default function Search() {
         e.preventDefault()
         const data = await getSearch(input.current.value)
         input.current.value = ''
-        if (data.length > 0) {
+        if (data.length > 0 && data) {
             searchC.search(data)
         } else {
             console.log('nonono')
@@ -43,7 +43,7 @@ export default function Search() {
     })
 
     return (
-        <Container onSubmit={submitSearch}>
+        <Container className='anim-nav' onSubmit={submitSearch}>
             <TextInput ref={input} placeholder='Search Here' id='text-input'></TextInput>
             <SvgSearch onMouseEnter={touchable ? searchClick : undefined } onClick={searchClick} id='search-icon' />
         </Container>
