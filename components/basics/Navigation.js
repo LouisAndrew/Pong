@@ -79,7 +79,7 @@ const Container = styled.div`
       transition: 1s;
   }
 
-  li a:hover {
+  html.no-touch li a:hover {
       font-size: 1.5rem;
   }
 
@@ -107,12 +107,12 @@ const Container = styled.div`
       }
 
       li {
-          padding: 4vw;
-          margin-left: 4vw;
+          margin: 4vw 10vh;
       }
 
       li a {
           color: #fff;
+          padding: 0;
       }
       
       #menu {
