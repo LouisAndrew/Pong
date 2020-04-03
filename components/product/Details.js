@@ -65,7 +65,6 @@ const Container = styled.div`
       
       & {
           padding: 0 2rem;
-          background-color: pink;
       }
   }
 `
