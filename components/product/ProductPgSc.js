@@ -47,13 +47,19 @@ const Item = styled.div`
 const Container = styled.div`
   width: 100%;
   ${({ theme }) => theme.flex()};
-  ${({ theme }) => theme.justifyContent('space-evenly')};
+  ${({ theme }) => theme.justifyContent('space-between')};
   ${({ theme }) => theme.flexFlow('row wrap')};
 
   @media only screen and ( max-width: 1024px ) {
       
       & > div {
           width: 45%;
+      }
+  }
+
+  @media only screen and ${({ theme }) => theme.sizes.tablet} {
+      & {
+          ${({ theme }) => theme.justifyContent('space-evenly')};
       }
   }
 

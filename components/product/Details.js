@@ -40,6 +40,8 @@ const Wrap = styled.div`
   ${({ theme }) => theme.flexFlow('row wrap')};
   padding: ${({ theme }) => theme.pad};
   padding-top: 0;
+
+  
 `
 
 const Container = styled.div`
@@ -56,6 +58,14 @@ const Container = styled.div`
       
       .itm {
           width: 100%;
+      }
+  }
+
+  @media only screen and ( min-width: 1920px ) {
+      
+      & {
+          padding: 0 2rem;
+          background-color: pink;
       }
   }
 `
