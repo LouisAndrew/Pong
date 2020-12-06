@@ -46,7 +46,7 @@ export default function Search() {
     <Container className="anim-nav" onSubmit={submitSearch}>
       <TextInput
         ref={input}
-        placeholder="Search Here"
+        placeholder="🍺 &nbsp;SEARCH FOR BEER"
         id="text-input"
       ></TextInput>
       <SvgSearch
@@ -73,9 +73,17 @@ const TextInput = styled.input`
   transition: 0.5s;
   overflow: hidden;
 
+  &::placeholder {
+    color: transparent;
+  }
+
   &.active {
     height: fit-content;
     padding: 1vh;
+
+    &::placeholder {
+      color: #bbb;
+    }
   }
 `;
 
@@ -91,6 +99,7 @@ const Container = styled.form`
     right: 4vw;
     transform: scale(1.5);
     transition: 0.5s;
+    cursor: pointer;
   }
 
   html.no-touch & #search-icon:hover {
