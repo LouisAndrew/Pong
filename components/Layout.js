@@ -1,165 +1,164 @@
-import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import Nav from './basics/Nav'
-import Footer from './basics/Footer'
-import React, { useEffect } from 'react'
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import Nav from "./basics/Nav";
+import Footer from "./basics/Footer";
+import React, { useEffect } from "react";
 
 export default function Layout(props) {
-
-    const theme = {
-        color: '#EFEFEF',
-        colorTransparent: '#C4C4C4',
-        footColor: '#434343',
-        pad: '2em 5em',
-        padMobile: '2em',
-        sizes: {
-            bigDesktop: '(min-width: 3000px)',
-            mobile: '(max-width:464px)',
-            tablet: '(max-width: 1023px)',
-            landscape: '(max-width: 850px) and (orientation: landscape)'
-        },
-        flex: () => (`
+  const theme = {
+    color: "#EFEFEF",
+    colorTransparent: "#C4C4C4",
+    footColor: "#434343",
+    pad: "2em 5em",
+    padMobile: "2em",
+    sizes: {
+      bigDesktop: "(min-width: 3000px)",
+      mobile: "(max-width:464px)",
+      tablet: "(max-width: 1023px)",
+      landscape: "(max-width: 850px) and (orientation: landscape)",
+    },
+    flex: () => `
             display: -webkit-box;
             display: -moz-box;
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
-        `),
-        flexFlow: val => (`
+        `,
+    flexFlow: (val) => `
             -webkit-flex-flow: ${val};
             -ms-flex-flow: ${val};
             flex-flow: ${val};
-        `),
-        justifyContent: val => {
-            let toRet = `
+        `,
+    justifyContent: (val) => {
+      let toRet = `
             -webkit-justify-content: ${val};
             justify-content: ${val};
-            `
+            `;
 
-            switch (val) {
-                case 'flex-start':
-                    toRet = `
+      switch (val) {
+        case "flex-start":
+          toRet = `
                         ${toRet}
                         -webkit-box-pack: start;
                         -moz-box-pack: start;
                         -ms-flex-pack: start;
-                    `
-                    break
-                case 'flex-end':
-                    toRet = `
+                    `;
+          break;
+        case "flex-end":
+          toRet = `
                         ${toRet}
                         -webkit-box-pack: end;
                         -moz-box-pack: end;
                         -ms-flex-pack: end;
-                    `
-                    break
-                case 'space-between':
-                    toRet = `
+                    `;
+          break;
+        case "space-between":
+          toRet = `
                         ${toRet}
                         -webkit-box-pack: justify;
                         -moz-box-pack: justify;
                         -ms-flex-pack: justify;
-                    `
-                    break
-                case 'space-around':
-                    toRet = `
+                    `;
+          break;
+        case "space-around":
+          toRet = `
                         ${toRet}
                         -ms-flex-pack: distribute;
-                    `
-                    break
-                default:
-                    toRet = `
+                    `;
+          break;
+        default:
+          toRet = `
                         ${toRet}
                         -webkit-box-pack: ${val};
                         -moz-box-pack: ${val};
                         -ms-flex-pack: ${val};
-                    `
-                    break
-            }
+                    `;
+          break;
+      }
 
-            return toRet
-        },
-        alignItems: val => {
-            let toRet = `
+      return toRet;
+    },
+    alignItems: (val) => {
+      let toRet = `
                 -webkit-align-items: ${val};
                 align-items: ${val};
-            `
+            `;
 
-            switch (val) {
-                case 'flex-start':
-                    toRet = `
+      switch (val) {
+        case "flex-start":
+          toRet = `
                         ${toRet}
                         -webkit-box-align: start;
                         -moz-box-align: start;
                         -ms-flex-align: start;
-                    `
-                    break
-                case 'flex-end':
-                    toRet = `
+                    `;
+          break;
+        case "flex-end":
+          toRet = `
                         ${toRet}
                         -webkit-box-align: end;
                         -moz-box-align: end;
                         -ms-flex-align: end;
-                    `
-                    break
-                default:
-                    toRet = `
+                    `;
+          break;
+        default:
+          toRet = `
                         ${toRet}
                         -webkit-box-align: ${val};
                         -moz-box-align: ${val};
                         -ms-flex-align: ${val};
-                    `
-                    break
-            }
-            return toRet
-        },
-        alignSelf: val => {
-            let toRet = `
+                    `;
+          break;
+      }
+      return toRet;
+    },
+    alignSelf: (val) => {
+      let toRet = `
                 -webkit-align-self: ${val};
                 align-self: ${val};
-            `
+            `;
 
-            switch (val) {
-                case 'flex-start':
-                    toRet = `
+      switch (val) {
+        case "flex-start":
+          toRet = `
                         ${toRet}
                         -ms-flex-item-align: start;
-                    `
-                    break
-                case 'flex-end':
-                    toRet = `
+                    `;
+          break;
+        case "flex-end":
+          toRet = `
                         ${toRet}
                         -ms-flex-item-align: end;
-                    `
-                    break
-                default: 
-                    toRet = `
+                    `;
+          break;
+        default:
+          toRet = `
                         ${toRet}
                         -ms-flex-item-align: ${val};
-                    `
-                    break
-            }
+                    `;
+          break;
+      }
 
-            return toRet
-        },
-        flexOrder: int => (`
+      return toRet;
+    },
+    flexOrder: (int) => `
             -webkit-box-ordinal-group: ${int + 1};
             -moz-box-ordinal-group: ${int + 1};
             -webkit-order: ${int};
             -ms-flex-order: ${int};
             order: ${int};
-        `),
-        center: () => (`
+        `,
+    center: () => `
             display: flex;
             justify-content: center;
             align-items: center;
-        `),
-        fitContainer: () => (`
+        `,
+    fitContainer: () => `
             height: 100%;
             width: 100%;
-        `)
-    }
+        `,
+  };
 
-    const Global = createGlobalStyle`
+  const Global = createGlobalStyle`
 
       * {
           margin: 0;
@@ -254,44 +253,37 @@ export default function Layout(props) {
             font-size: 0.3rem;
         } 
       }
+    `;
 
-      ${'' /* div {
-          border: 1px solid #fff;
-      } */}
-    `
+  const checkTouch = () => {
+    const addClass = () => {
+      document.documentElement.classList -= " no-touch";
+    };
 
-    const checkTouch = () => {
-        // const touchsupport = ('ontouchstart' in React.window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
-        // if (!touchsupport){ // browser doesn't support touch
-        //     document.documentElement.className += " non-touch"
-        // }
+    document.documentElement.classList += " no-touch";
+    document.addEventListener(
+      "touchstart",
+      () => {
+        addClass();
+      },
+      () => {
+        document.removeEventListener("touchstart", addClass, false);
+      }
+    );
+  };
 
-        // console.log(touchsupport)
-        const addClass = () => {
-            document.documentElement.classList -= ' no-touch'
-        }
+  useEffect(() => {
+    checkTouch();
+  });
 
-        document.documentElement.classList += ' no-touch'
-        document.addEventListener('touchstart', () => {
-            addClass()
-        }, () => {
-            document.removeEventListener('touchstart', addClass, false)
-        })
-
-    }
-
-    useEffect(() => {
-        checkTouch()
-    })
-    
-    return (
-        <div>
-            <Global />
-            <ThemeProvider theme={theme}>
-                <Nav />
-                {props.children}
-                <Footer />
-            </ThemeProvider>
-        </div>
-    )
+  return (
+    <div>
+      <Global />
+      <ThemeProvider theme={theme}>
+        <Nav />
+        {props.children}
+        <Footer />
+      </ThemeProvider>
+    </div>
+  );
 }

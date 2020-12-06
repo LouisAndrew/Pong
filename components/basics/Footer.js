@@ -1,32 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
-import FooterLogo from './FooterLogo'
-import FootNav from './FootNav'
-import SocialMedias from './SocialMedias'
+import React from "react";
+import styled from "styled-components";
+import FooterLogo from "./FooterLogo";
+import SocialMedias from "./SocialMedias";
 
 const Footer = () => {
-    return (
-        <Container>
-            
-            <Item>
-                <FooterLogo />
-            </Item>
-            <Item>
-                <FootNav />
-            </Item>
-            <Item>
-                <SocialMedias />
-            </Item>
+  return (
+    <Container>
+      <Item>
+        <FooterLogo />
+      </Item>
+      <Item>
+        <SocialMedias />
+      </Item>
+    </Container>
+  );
+};
 
-        </Container>
-    )
-}
-
-export default Footer
+export default Footer;
 
 const Item = styled.div`
   ${({ theme }) => theme.fitContainer()};
-`
+`;
 
 const Container = styled.div`
   height: 25vh;
@@ -34,4 +28,4 @@ const Container = styled.div`
   padding: ${({ theme }) => theme.pad};
   background-color: ${({ theme }) => theme.footColor};
   ${({ theme }) => theme.flex()};
-`
+`;
